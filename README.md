@@ -6,7 +6,7 @@
 ## 1. Create a conda environment
 
 ```bash
-conda create -n venvAwsBEDROCK python==3.13
+conda create -n venvAws python==3.10 -y
 ```
 
 ## 2. Install the required packages
@@ -16,4 +16,15 @@ conda create -n venvAwsBEDROCK python==3.13
 python -m pip install -r requirements.txt
 ```
 
-## 3.
+## 3. Configure AWS credentials
+
+```bash
+aws configure
+```
+
+## 4. run that llama3.py file
+````bash
+python llama3.py
+````
+
+## 5.
