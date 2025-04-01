@@ -3,7 +3,7 @@ import json
 
 
 prompt_data="""
-Act as a shakespeare and write a poem on Machine Learning
+Act as a shakespeare and write a poem on Generative AI
 
 """
 
@@ -24,12 +24,12 @@ payload={
 
 ## convert into json
 body=json.dumps(payload)
-INFERENCE_PROFILE_ARN = "arn:aws:bedrock:us-east-1:194722404467:inference-profile/us.meta.llama3-3-70b-instruct-v1:0"
+# INFERENCE_PROFILE_ARN = "arn:aws:bedrock:us-east-1:194722404467:inference-profile/us.meta.llama3-3-70b-instruct-v1:0"
 
 
 
 
-model_id="meta.llama3-3-70b-instruct-v1:0"
+model_id="arn:aws:bedrock:us-east-1:194722404467:inference-profile/us.meta.llama3-3-70b-instruct-v1:0"
 
 
 response=bedrock.invoke_model(
@@ -37,7 +37,7 @@ response=bedrock.invoke_model(
     modelId=model_id,
     accept="application/json",
     contentType="application/json",
-    inferenceProfileArn=INFERENCE_PROFILE_ARN
+   # inferenceProfileArn=INFERENCE_PROFILE_ARN
 )
 
 response_body=json.loads(response.get("body").read())
