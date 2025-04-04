@@ -28,3 +28,10 @@ python llama3.py
 ````
 
 ## 5.
+````bash
+python -m pip install -U langchain-community
+````
+
+````bash
+streamlit run app.py
+````
